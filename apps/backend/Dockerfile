@@ -1,13 +1,15 @@
-FROM node:14.15
+FROM node:alpine
 
-WORKDIR /app
-COPY ../.. .
+RUN mkdir -p /usr/src/node-app && chown -R node:node /usr/src/node-app
 
-ENV NODE_ENV=production
+WORKDIR /usr/src/node-app
 
-RUN npm ci
-RUN npm run build
+COPY package.json yarn.lock ./
 
-EXPOSE 9376
+USER node
 
-CMD [ "npm", "start" ]
+RUN yarn install --pure-lockfile
+
+COPY --chown=node:node . .
+
+EXPOSE 3000
