@@ -1,0 +1,14 @@
+{
+  "name": "@monorepo/shared",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "repository": "git@github.com:NickSolante/firebrand.git",
+  "author": "NickSolante <41457938+NickSolante@users.noreply.github.com>",
+  "license": "MIT",
+  "dependencies": {
+    "lerna": "^4.0.0"
+  },
+  "workspaces": [
+    "apps/*"
+  ]
+}
