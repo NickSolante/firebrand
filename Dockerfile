@@ -10,6 +10,6 @@ USER node
 
 RUN yarn install --pure-lockfile
 
-COPY --chown=node:node backend .
+COPY --chown=node:node src .
 
 EXPOSE 3000
