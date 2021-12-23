@@ -27,7 +27,6 @@ app.post("/scan", (req, res) => {
 
   qr.toDataURL(url, (err, src) => {
     if (err) res.send("Error occured");
-    console.log(src);
     // Let us return the QR code image as our response and set it to be the source used in the webpage
     res.send(src);
   });

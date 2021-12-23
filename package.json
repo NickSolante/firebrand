@@ -7,7 +7,7 @@
     "test": "test",
     "build": "tsc",
     "start:dev": "nodemon src/app.ts",
-    "start": "ts-node src/app.ts"
+    "start": "node build/app.js"
   },
   "author": "Nick Solante",
   "license": "ISC",
