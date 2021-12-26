@@ -32,25 +32,6 @@ app.post("/scan", (req, res) => {
   });
 });
 
-app.post("/terminal", (req, res) => {
-  const stringdata = JSON.stringify(req.body.url);
-
-  // If the input is null return "Empty Data" error
-  if (stringdata.length === 0) res.send("Empty Data!");
-
-  // Let us convert the input stored in the url and return it as a representation of the QR Code image contained in the Data URI(Uniform Resource Identifier)
-  // It shall be returned as a png image format
-  // In case of an error, it will save the error inside the "err" variable and display it
-
-  qr.toString(stringdata, { type: "terminal" }, function (err, QRcode) {
-    if (err) return console.log("error occurred");
-
-    // Printing the generated code
-    console.log(QRcode);
-    res.send("ok");
-  });
-});
-
 app.listen(port, () => {
   console.log(`example app is listening to ${port}`);
 });
