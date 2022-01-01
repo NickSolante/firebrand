@@ -1,0 +1,13 @@
+{
+  "type": "postgres",
+  "host": "localhost",
+  "port": 5432,
+  "username": "admin",
+  "password": "password",
+  "database": "firebrand_db",
+  "entities": [
+    "src/entity/*.ts"
+  ],
+  "logging": true,
+  "synchronize": true
+}
